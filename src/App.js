@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import {connect, Provider} from 'react-redux'
+import store, {getCatUrl} from './store/store'
 
-function App() {
-  return (
+const App = (props) => (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src={props.cat.url}/>
+      {props.cat.firstChange ? <button onClick={props.getCatUrl}> Get kitty</button> :
+          <button onClick={props.getCatUrl}> More kitty</button>}
     </div>
-  );
-}
+)
 
-export default App;
+const mapStateToProps = (state) => {
+  return {cat: state.cat}
+}
+const AppContainer = connect(mapStateToProps, {getCatUrl})(App)
+
+const CatApp = (props) => {
+  return <Provider store={store}>
+    <AppContainer/>
+  </Provider>
+}
+export default CatApp
