@@ -1,0 +1,17 @@
+.mainContainer {
+    width: 530px;
+    height: 530px;
+    margin: 20px auto;
+    background: pink;
+    padding: 30px;
+    border: 2px deeppink solid;
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mainContainer .title{
+    font-family: cursive;
+    font-size: 24px;
+}
