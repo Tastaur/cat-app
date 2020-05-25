@@ -1,13 +1,5 @@
 .preloader {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.64);
-    z-index: 2;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
 .img {
